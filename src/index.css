@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-primary: #dbdbdb;
+  --color-secondary: #c5c5c5;
+  --color-background-primary: #fff;
+  /* --color-background-secondary: #b6b6b6; */
+
+  --color-dark-primary: #1e1e1e;
+  --color-dark-secondary: #121212;
+  --color-dark-background-primary: #161616;
+  /* --color-dark-background-secondary: #030303; */
+  /* --color-dark-primary: #121212; */
+  /* --color-dark-secondary: #1e1e1e; */
+
+  --color-accent-teal: #4ecdc4;
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #a0a0a0;
+
+  --color-button-primary: #4ecdc4;
+  --color-button-primary-hover: #6edcd4;
+  --color-button-primary-active: #3ebab4;
+
+  --color-button-secondary: #2c2c2c;
+  --color-button-secondary-hover: #3c3c3c;
+  --color-button-secondary-active: #1c1c1c;
+
+  --color-state-success: #2ecc71;
+  --color-state-warning: #f39c12;
+  --color-state-error: #e74c3c;
+  --color-state-info: #3498db;
+
+  --color-shadow-soft: rgba(0, 0, 0, 0.3);
+  --color-shadow-medium: rgba(0, 0, 0, 0.5);
+  --color-shadow-intense: rgba(0, 0, 0, 0.7);
+}
+
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+  :root {
+    --font-main: "Orbitron", sans-serif;
+  }
+
+  html {
+    font-family: var(--font-main);
+  }
+
+  * {
+    @apply m-0 p-0 box-border text-black dark:text-white;
+  }
+
+  body {
+    @apply bg-background-primary dark:bg-dark-background-primary;
+  }
+}
+
+@layer components {
+  .button {
+    @apply bg-indigo-600 text-white font-medium px-4 py-2 rounded-md
+      shadow-sm hover:bg-indigo-700 hover:shadow-md active:bg-indigo-800 
+      active:translate-y-px focus:outline-none focus:ring-2 focus:ring-indigo-500 
+      focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none
+      transition-all duration-200 ease-in-out;
+  }
+  .input {
+    @apply p-2 border border-white/50;
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
